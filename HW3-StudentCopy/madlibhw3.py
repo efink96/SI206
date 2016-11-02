@@ -17,17 +17,14 @@ import random
 nltk.download('punkt')
 
 from nltk import word_tokenize,sent_tokenize
+from nltk.corpus import gutenberg
 
 debug = False #True
-
-# get file from user to make mad lib out of
-if debug:
-	print ("Getting information from file madlib_test.txt...\n")
-fname = "madlibtest2.txt" # need a file with this name in directory
-
+fname = gutenberg.words()
 f = open(fname, 'r')
 para = f.read()
 tokens = nltk.word_tokenize(para)
+print(type(tokens))
 print("TOKENS")
 print(tokens)
 tagged_tokens = nltk.pos_tag(tokens) # gives us a tagged list of tuples
@@ -38,8 +35,8 @@ if debug:
 	for tup in tagged_tokens[:5]:
 		print (tup)
 
-tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective"}
-substitution_probabilities = {"NN":.15,"NNS":.1,"VB":.1,"JJ":.1}
+tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective", "NNP": "a proper noun"}
+substitution_probabilities = {"NN":.15,"NNS":.1,"VB":.1,"JJ":.1, "NNP":.1}
 
 def spaced(word):
 	if word in [",", ".", "?", "!", ":"]:
