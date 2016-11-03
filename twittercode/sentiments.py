@@ -17,7 +17,7 @@ api = tweepy.API(auth)
 public_tweets = api.search('"Gilmore Girls" @netflix')
 
 for tweet in public_tweets:
-	print(tweet.text)
+	print(tweet.text.encode("ascii", "ignore").decode("utf-8"))
 	analysis = TextBlob(tweet.text.encode("ascii", "ignore").decode("utf-8"))
 	print(analysis.sentiment)
 
