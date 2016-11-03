@@ -27,11 +27,12 @@ debug = False #True
 print("TOKENS")
 #count = 0
 #while count < 150:
-print(text2[0:150])
+tokens = text2[0:150]
+print(tokens)
 	#count += 1
 tagged_tokens = nltk.pos_tag(tokens) # gives us a tagged list of tuples
-print("TAGGED TOKENS")
-print(tagged_tokens)
+#print("TAGGED TOKENS")
+#print(tagged_tokens)
 if debug:
 	print ("First few tagged tokens are:")
 	for tup in tagged_tokens[:5]:
@@ -55,7 +56,6 @@ for (word, tag) in tagged_tokens:
 	else:
 		new_word = input("Please enter %s:\n" % (tagmap[tag]))
 		final_words.append(spaced(new_word))
-
 print ("".join(final_words))
 
 print("\n\nEND*******")
