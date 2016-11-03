@@ -12,21 +12,23 @@
 print("START*******")
 import nltk # requires some downloading/installing dependencies to use all its features; numpy is especially tricky to install
 import random
-
+from nltk.book import *
 # import nltk
 nltk.download('punkt')
 
 from nltk import word_tokenize,sent_tokenize
-from nltk.corpus import gutenberg
 
 debug = False #True
-fname = gutenberg.words()
-f = open(fname, 'r')
-para = f.read()
-tokens = nltk.word_tokenize(para)
-print(type(tokens))
+#fname = text2
+#f = open(fname, 'r')
+#para = f.read()
+#tokens = nltk.word_tokenize(text2)
+#print(type(tokens))
 print("TOKENS")
-print(tokens)
+#count = 0
+#while count < 150:
+print(text2[0:150])
+	#count += 1
 tagged_tokens = nltk.pos_tag(tokens) # gives us a tagged list of tuples
 print("TAGGED TOKENS")
 print(tagged_tokens)
