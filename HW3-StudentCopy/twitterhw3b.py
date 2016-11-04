@@ -30,7 +30,6 @@ sub_sum = 0
 for tweet in public_tweets:
 	print(tweet.text.encode("ascii", "ignore").decode("utf-8"))
 	analysis = TextBlob(tweet.text.encode("ascii", "ignore").decode("utf-8"))
-	print(analysis.sentiment)
 	tweet_count += 1
 	pol_sum += analysis.sentiment.polarity
 	sub_sum += analysis.sentiment.subjectivity
