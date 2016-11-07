@@ -20,5 +20,4 @@ image = open('elle woods.jpg', 'rb')
 img = 'elle woods.jpg'
 api.update_with_media(img, status="Love Elle Woods! #UMSI-206 #Proj3 #tweetedusingpython")
 
-print("""No output necessary although you 
-	can print out a success/failure message if you want to.""")
+print("""Success!""")
